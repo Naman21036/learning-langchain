@@ -1,0 +1,18 @@
+{
+    "name": null,
+    "input_variables": [
+        "company",
+        "experience",
+        "role",
+        "skills"
+    ],
+    "optional_variables": [],
+    "output_parser": null,
+    "partial_variables": {},
+    "metadata": null,
+    "tags": null,
+    "template": "\nYou are an AI hiring assistant.\n\nAnalyze the following candidate profile.\n\nCompany: {company}\nRole: {role}\nSkills: {skills}\nExperience: {experience}\n\nProvide:\n1. Candidate fit score out of 10\n2. Strengths of the candidate\n3. Missing skills\n4. Suggested interview questions\n5. Final hiring recommendation\n",
+    "template_format": "f-string",
+    "validate_template": false,
+    "_type": "prompt"
+}
