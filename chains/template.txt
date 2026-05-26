@@ -1,0 +1,38 @@
+Reinforcement Learning (RL) is a branch of machine learning that focuses on how agents can learn to make decisions through trial and error to maximize cumulative rewards. RL allows machines to learn by interacting with an environment and receiving feedback based on their actions. This feedback comes in the form of rewards or penalties.
+Reinforcement Learning revolves around the idea that an agent (the learner or decision-maker) interacts with an environment to achieve a goal. The agent performs actions and receives feedback to optimize its decision-making over time.
+
+Agent: The decision-maker that performs actions.
+Environment: The world or system in which the agent operates.
+State: The situation or condition the agent is currently in.
+Action: The possible moves or decisions the agent can make.
+Reward: The feedback or result from the environment based on the agent’s action.
+Core Components
+1. Policy
+
+Defines the agent’s behavior i.e maps states for actions.
+Can be simple rules or complex computations.
+Example: An autonomous car maps pedestrian detection to make necessary stops.
+2. Reward Signal
+
+Represents the goal of the RL problem.
+Guides the agent by providing feedback (positive/negative rewards).
+Example: For self-driving cars rewards can be fewer collisions, shorter travel time, lane discipline.
+3. Value Function
+
+Evaluates long-term benefits, not just immediate rewards.
+Measures desirability of a state considering future outcomes.
+Example: A vehicle may avoid reckless maneuvers (short-term gain) to maximize overall safety and efficiency.
+4. Model
+
+Simulates the environment to predict outcomes of actions.
+Enables planning and foresight.
+Example: Predicting other vehicles’ movements to plan safer routes.
+Working of Reinforcement Learning
+The agent interacts iteratively with its environment in a feedback loop:
+
+The agent observes the current state of the environment.
+It chooses and performs an action based on its policy.
+The environment responds by transitioning to a new state and providing a reward (or penalty).
+The agent updates its knowledge (policy, value function) based on the reward received and the new state.
+This cycle repeats with the agent balancing exploration (trying new actions) and exploitation (using known good actions) to maximize the cumulative reward over time.
+This process is mathematically framed as a Markov Decision Process (MDP) where future states depend only on the current state and action, not on the prior sequence of events.
