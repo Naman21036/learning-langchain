@@ -1,5 +1,11 @@
 langchain
 langchain-core
+langchain-community
+langchain-experimental
+chromadb 
+faiss-cpu 
+tiktoken  
+wikipedia
 
 # OpenAI Integration
 langchain-openai
@@ -27,3 +33,5 @@ python-dotenv
 #For creating a web app
 streamlit
 grandalf
+
+

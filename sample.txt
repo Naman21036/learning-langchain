@@ -1,0 +1,71 @@
+class Product:
+    """Represents an individual item available for purchase."""
+    
+    def __init__(self, name: str, price: float):
+        self.name = name
+        self.price = price
+
+    def __str__(self):
+        return f"{self.name} (${self.price:.2f})"
+
+
+class ShoppingCart:
+    """Manages a collection of products selected by a customer."""
+    
+    def __init__(self):
+        # Composition: This class holds a list of Product instances
+        self.items = []
+
+    def add_item(self, product: Product):
+        """Adds a Product object to the cart."""
+        self.items.append(product)
+        print(f"Added {product.name} to the cart.")
+
+    def calculate_total(self) -> float:
+        """Sums up the prices of all products in the cart."""
+        return sum(item.price for item in self.items)
+
+    def display_cart(self):
+        """Prints out all items currently in the cart."""
+        if not self.items:
+            print("The cart is empty.")
+            return
+        print("\n--- Items in Cart ---")
+        for item in self.items:
+            print(f"- {item}")
+
+
+class Customer:
+    """Represents the shopper who owns the cart."""
+    
+    def __init__(self, name: str):
+        self.name = name
+        # Composition: Every customer is assigned their own ShoppingCart instance
+        self.cart = ShoppingCart()
+
+    def checkout(self):
+        """Handles the final checkout and payments."""
+        print(f"\n--- Checking out for {self.name} ---")
+        self.cart.display_cart()
+        total = self.cart.calculate_total()
+        print(f"Total Amount Due: ${total:.2f}")
+        print("Payment processed successfully!")
+
+
+# --- Execution Block ---
+if __name__ == "__main__":
+    # 1. Create independent product objects
+    laptop = Product("MacBook Pro", 1299.99)
+    mouse = Product("Wireless Mouse", 49.99)
+    keyboard = Product("Mechanical Keyboard", 99.99)
+
+    # 2. Instantiate a customer profile
+    customer_alice = Customer("Alice")
+
+    # 3. Customer interacts with the cart using product instances
+    customer_alice.cart.add_item(laptop)
+    customer_alice.cart.add_item(mouse)
+    customer_alice.cart.add_item(keyboard)
+
+    # 4. Finalize the order
+    customer_alice.checkout()
